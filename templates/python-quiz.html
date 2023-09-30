@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Python Beginners Quiz{% endblock %}
+
+{% block content %}
+    <h3 class="text-center">Python Beginners Quiz</h3>
+    <form action="/quiz/python" method="POST">
+        {% for question in questions %}
+            <p>{{ question['question'] }}</p>
+            <ul>
+                {% for option in question['options'] %}
+                    <li>
+                        <input type="radio" name="{{ question['question'] }}" value="{{ option }}"> {{ option }}<br>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+        <button type="submit" class="btn btn-primary mt-3">Submit</button>
+    </form>
+{% endblock %}

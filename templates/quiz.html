@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Quiz Result{% endblock %}
+
+{% block content %}
+    <h1>Quiz Result</h1>
+    {% if quiz_type == 'python' %}
+        <h2>Python Beginners Quiz Score: {{ score }} / {{ total }}</h2>
+    {% elif quiz_type == 'web-dev' %}
+        <h2>Web Development Basics Quiz Score: {{ score }} / {{ total }}</h2>
+    {% else %}
+        <p>Invalid quiz type selected.</p>
+    {% endif %}
+{% endblock %}
